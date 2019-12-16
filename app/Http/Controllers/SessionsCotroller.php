@@ -8,13 +8,7 @@ use Auth;
 class SessionsCotroller extends Controller
 {
 
-    public function __construct()
-    {
-
-
-    }
-
-    //注册
+    //登录
     public function create()
     {
         return view('sessions.create');
