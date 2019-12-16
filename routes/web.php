@@ -13,3 +13,7 @@ Route::post('login','SessionsCotroller@store')->name('login');
 Route::delete('logout','SessionsCotroller@destroy')->name('logout');
 
 Route::resource('users','UsersController');
+
+
+//邮件激活账号
+Route::get('signup/confirm/{token}','UsersController@confirmEmail')->name('confirm_email');
