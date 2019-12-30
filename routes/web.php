@@ -14,7 +14,6 @@ Route::delete('logout','SessionsCotroller@destroy')->name('logout');
 
 Route::resource('users','UsersController');
 
-
 //邮件激活账号
 Route::get('signup/confirm/{token}','UsersController@confirmEmail')->name('confirm_email');
 
@@ -23,3 +22,6 @@ Route::get('password/reset','Auth\ForgotPasswordController@showLinkRequestForm')
 Route::post('password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');//邮箱发送重设链接
 Route::get('password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');//密码更新页面
 Route::post('password/reset','Auth\ResetPasswordController@reset')->name('password.update'); //执行密码更新操作
+
+//微博相关的操作
+Route::resource('statuses','StatusesController',['only' => ['store','destroy']]);
